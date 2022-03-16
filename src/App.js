@@ -4,6 +4,7 @@ import WarningSign from "./component/WarningSign";
 import MyBadge from "./component/MyBadge";
 import SingleBook from "./component/SingleBook";
 import history from "./history.json";
+import BookList from "./component/BookList";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <header className="App-header">
         <WarningSign text="Latest History Books" />
         <MyBadge color="success" text="OUT NOW !" />
-        <SingleBook books={history[0]} />
+        <SingleBook book={history[0]} />
+        <BookList books={history} />
       </header>
     </div>
   );
