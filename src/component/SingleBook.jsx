@@ -3,7 +3,7 @@
 import { Card, Button } from "react-bootstrap";
 
 const SingleBook = ({ book }) => (
-  <Card style={{ width: "18rem" }} className="mt-3 text-dark">
+  <Card style={{ width: "15rem" }} className="mt-3 text-dark">
     <Card.Img variant="top" className="justify-content-center" src={book.img} />
     <Card.Body>
       <Card.Title>{book.title}</Card.Title>
