@@ -13,16 +13,25 @@ class BookList extends React.Component {
           <Col>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Search Libary</Form.Label>
-              <Form.Control type="text" placeholder="Search here" />
+              <Form.Control
+                type="text"
+                placeholder="Search here"
+                value={this.state.searchQuery}
+                onChange={(event) =>
+                  this.setState({ searchQuery: event.target.value })
+                }
+              />
             </Form.Group>
           </Col>
         </Row>
         <Row>
-          {this.props.books.map((history) => (
-            <Col md={3}>
-              <SingleBook book={history} />
-            </Col>
-          ))}
+          {this.props.books
+            .filter((history) => history.title.includes(this.state.searchQuery))
+            .map((history) => (
+              <Col md={3}>
+                <SingleBook book={history} />
+              </Col>
+            ))}
         </Row>
       </Container>
     );
