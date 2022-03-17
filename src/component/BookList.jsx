@@ -26,7 +26,9 @@ class BookList extends React.Component {
         </Row>
         <Row>
           {this.props.books
-            .filter((history) => history.title.includes(this.state.searchQuery))
+            .filter((history) =>
+              history.title.toLowerCase().includes(this.state.searchQuery)
+            )
             .map((history) => (
               <Col md={3}>
                 <SingleBook book={history} />
