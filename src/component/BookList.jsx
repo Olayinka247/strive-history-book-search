@@ -1,6 +1,7 @@
 import React from "react";
 import SingleBook from "./SingleBook";
 import { Container, Row, Col, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class BookList extends React.Component {
   state = {
@@ -31,7 +32,9 @@ class BookList extends React.Component {
             )
             .map((history) => (
               <Col md={3}>
-                <SingleBook book={history} />
+                <Link to={"/"} key={history._id}>
+                  <SingleBook book={history} />
+                </Link>
               </Col>
             ))}
         </Row>
