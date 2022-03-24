@@ -19,7 +19,8 @@ class SingleBook extends React.Component {
 
   CommentAdd = () => {
     const saveButton = fetch(
-      "https://striveschool-api.herokuapp.com/api/comments/",
+      "https://striveschool-api.herokuapp.com/api/comments/" +
+        this.props.book.asin,
       {
         method: "POST",
         body: JSON.stringify(this.state.comment),
